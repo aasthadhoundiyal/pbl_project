@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 220 25% 18%;
+
+    --card: 40 30% 99%;
+    --card-foreground: 220 25% 18%;
+
+    --popover: 40 30% 99%;
+    --popover-foreground: 220 25% 18%;
+
+    --primary: 270 50% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 30% 92%;
+    --secondary-foreground: 270 40% 30%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 220 15% 50%;
+
+    --accent: 220 30% 22%;
+    --accent-foreground: 40 30% 97%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 20% 88%;
+    --input: 270 20% 88%;
+    --ring: 270 50% 68%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --lavender: 270 50% 68%;
+    --lavender-light: 270 40% 92%;
+    --lavender-glow: 270 60% 75%;
+    --ivory: 40 33% 97%;
+    --navy: 220 30% 22%;
+    --navy-light: 220 20% 35%;
+    --warm-gray: 30 10% 60%;
+    --success: 145 60% 45%;
+    --success-light: 145 50% 90%;
+    --streak-orange: 25 90% 55%;
+    --streak-orange-light: 25 80% 92%;
+    --sticky-yellow: 48 90% 85%;
+    --sticky-yellow-dark: 48 60% 40%;
+
+    --shadow-soft: 0 4px 20px -4px hsl(270 30% 60% / 0.15);
+    --shadow-hover: 0 8px 30px -6px hsl(270 30% 60% / 0.25);
+    --shadow-card: 0 2px 12px -2px hsl(270 30% 60% / 0.1);
+
+    --font-heading: 'Fredoka', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-handwritten: 'Caveat', cursive;
+
+    --sidebar-background: 270 30% 96%;
+    --sidebar-foreground: 220 25% 18%;
+    --sidebar-primary: 270 50% 68%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 40% 92%;
+    --sidebar-accent-foreground: 220 25% 18%;
+    --sidebar-border: 270 20% 88%;
+    --sidebar-ring: 270 50% 68%;
+  }
+
+  .dark {
+    --background: 250 25% 10%;
+    --foreground: 270 20% 92%;
+
+    --card: 250 22% 14%;
+    --card-foreground: 270 20% 92%;
+
+    --popover: 250 22% 14%;
+    --popover-foreground: 270 20% 92%;
+
+    --primary: 270 50% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 250 20% 20%;
+    --secondary-foreground: 270 30% 85%;
+
+    --muted: 250 18% 18%;
+    --muted-foreground: 270 15% 60%;
+
+    --accent: 270 40% 75%;
+    --accent-foreground: 250 25% 10%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 18% 22%;
+    --input: 250 18% 22%;
+    --ring: 270 50% 68%;
+
+    --lavender: 270 50% 68%;
+    --lavender-light: 270 30% 20%;
+    --lavender-glow: 270 55% 72%;
+    --ivory: 250 25% 10%;
+    --navy: 270 20% 85%;
+    --navy-light: 270 15% 65%;
+    --warm-gray: 270 10% 50%;
+    --sticky-yellow: 48 40% 25%;
+    --sticky-yellow-dark: 48 50% 70%;
+
+    --sidebar-background: 250 22% 12%;
+    --sidebar-foreground: 270 20% 92%;
+    --sidebar-primary: 270 50% 68%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 250 20% 18%;
+    --sidebar-accent-foreground: 270 20% 92%;
+    --sidebar-border: 250 18% 22%;
+    --sidebar-ring: 270 50% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--lavender) / 0.4); }
+  50% { box-shadow: 0 0 20px 4px hsl(var(--lavender) / 0.2); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+@keyframes correct-pulse {
+  0% { box-shadow: 0 0 0 0 hsl(var(--success) / 0.5); }
+  70% { box-shadow: 0 0 0 12px hsl(var(--success) / 0); }
+  100% { box-shadow: 0 0 0 0 hsl(var(--success) / 0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ripple {
+  to { transform: scale(4); opacity: 0; }
+}
+
+@keyframes progress-fill {
+  from { width: 0; }
+}
+
+@keyframes toast-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes toast-out {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-shake { animation: shake 0.5s ease-in-out; }
+.animate-correct-pulse { animation: correct-pulse 0.6s ease-out; }
+.animate-slide-up { animation: slide-up 0.4s ease-out both; }
+.animate-fade-in { animation: fade-in 0.3s ease-out both; }
+.animate-ripple { animation: ripple 0.6s linear; }
+.animate-progress-fill { animation: progress-fill 1s ease-out both; }
+.animate-toast-in { animation: toast-in 0.3s ease-out; }
+.animate-toast-out { animation: toast-out 0.3s ease-in; }
+
+/* Staggered animations */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+
+/* Handwritten font utility */
+.font-handwritten {
+  font-family: var(--font-handwritten);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
