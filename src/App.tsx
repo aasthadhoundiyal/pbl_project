@@ -20,7 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <ToastContainer />
-      <BrowserRouter>
+      <BrowserRouter basename="/pbl_project">
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
