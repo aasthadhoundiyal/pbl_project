@@ -1,1 +1,1 @@
-https://mujmanipal-my.sharepoint.com/:p:/g/personal/aastha_2427030684_muj_manipal_edu/IQAx2Ltt46-wQLGcf4mmKnyKAUvKiWW0qkTXGIMVajCd2ok?e=Vk2UtG
+https://docs.google.com/presentation/d/1PN-a3Z5mPRwvwKvLNmfzjevsqitYtlKq/edit?usp=sharing&ouid=118009960297560267359&rtpof=true&sd=true
